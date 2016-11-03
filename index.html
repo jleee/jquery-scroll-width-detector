@@ -7,26 +7,37 @@
 	body {
 		height: 15000px;
 	}
-	#scroll-number {
+	p {
 		font-family: Helvetica, Arial, sans-serif;
 		background: #000;
+		color: #FFF;
 		opacity: 0.7;
 		position: fixed;
-		top: 5%;
-		left: 1%;
-		color: #FFF;
 		z-index: 111;
 		padding: 10px;
+		left: 1%;
+
+	}
+	#scroll-number {
+		top: 5%;
+
+	}
+	#width-number {
+		top: 10%;
 	}
 	</style>
 </head>
 <body>
 	<p id="scroll-number">You've scrolled 0 pixels</p>
+	<p id="width-number">Your window width is 0 pixels</p>
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>	
 <script>
-	$(window).scroll(function() { 
-		// Display window scroll
+	$(window).on('scroll resize',function() { 
+	    // Display window scroll
 	    $('#scroll-number').text('You\'ve scrolled ' + $(window).scrollTop() + ' pixels');
+
+	    // Display window width
+	    $('#width-number').text('Your window width is ' + $(window).width() + ' pixels');	    
 	});
 </script>
 </body>
