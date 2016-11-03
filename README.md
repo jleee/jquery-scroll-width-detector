@@ -1,2 +1,2 @@
-# Simple jQuery window scroll detector
+# jQuery Scroll/Width Detector
 
